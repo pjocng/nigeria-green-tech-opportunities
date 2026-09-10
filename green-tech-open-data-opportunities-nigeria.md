@@ -670,6 +670,8 @@ Re-running with weights that favour a bootstrapped founder — MVP ×2, CAP ×2,
 
 Rationale: FlareWatch tops the unweighted score and owns the best *funding + gap + carbon* story; SolarLedger tops the *build-first* weighting with the fastest revenue and lowest risk and shares its MRV core with FlareWatch; FloodShield is the largest *adaptation-finance and B2G* opportunity against Nigeria's most visible, most recurrent climate harm. Together they span three sectors and three distinct funding pools, so a founder can pick by appetite (funding-ceiling vs speed-to-revenue vs public-mission).
 
+**Deep dives** for the top 3 follow in Sections 9A–9C. A fourth deep dive — **④ DeltaGuard NG (P14)**, Section 9D — is included by request: it is the portfolio's strongest environmental-integrity and B2G play, and a leading carbon/MRV opportunity through Niger Delta mangrove blue carbon.
+
 ---
 
 # 9A. Deep dive — ① FlareWatch NG
@@ -919,6 +921,95 @@ Rationale: FlareWatch tops the unweighted score and owns the best *funding + gap
 - **M9–12:** Lagos + Port Harcourt pluvial modelling; anticipatory-action pilot; submit a GCF-readiness or Adaptation Fund concept (via DBN/BOI) with pilot evidence; API + origination widget GA.
 
 **Estimated MVP development effort.** ~5–7 months, 4 people (2 geospatial/hydrology, 1 backend, 1 full-stack/design), ~$150–220k including compute for the historical archive build and hazard modelling. A "risk-lookup + portfolio dashboard, fluvial only" cut can reach a first paying pilot in ~4 months.
+
+---
+
+# 9D. Deep dive — ④ DeltaGuard NG
+
+*Added by request. DeltaGuard (P14) ranks joint-6th on the unweighted score (Section 8.2) and is a top-5 pick for both B2G and carbon/MRV. It is the strongest "environmental-integrity" opportunity in the portfolio — the place where open data, a chronic and politically charged problem, a legal duty to remediate, and a fast-growing blue-carbon market intersect.*
+
+**Product concept.** An independent Niger Delta environmental-monitoring and remediation-MRV platform. It corroborates every reported oil spill against satellite evidence, estimates the impacted area, tracks whether clean-up actually happened, and provides survey-grade MRV for mangrove-restoration and blue-carbon projects — turning the Oil Spill Monitor's incident log, Sentinel radar/optical archives and mangrove-change datasets into an evidence base that regulators, operators, host-community trusts, funders and courts can rely on.
+
+**Proposed product name.** *DeltaGuard NG* (platform), with a *MangroveLedger* module for restoration and blue-carbon MRV.
+
+**Problem statement.** The Niger Delta is one of the most oil-damaged environments on earth. An international study using satellite data and AI put mangrove mortality at **5,644 hectares per year (2016–2024)**, with roughly **54% of the loss attributable to oil spills**; mangrove cover has fallen to ~7,058 km² and is retreating landward ~13.6 m/year ([phys.org](https://phys.org/news/2025-02-reveals-extent-ecological-niger-delta.html), [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0141113625004076)). The NOSDRA **Oil Spill Monitor** records thousands of incidents since 2006, but operator-supplied volumes and causes are routinely disputed and clean-up is rarely verified. Shell's 2025 exit and the transfer of onshore assets to **Renaissance Africa Energy** ([Amnesty](https://www.amnesty.org/en/latest/news/2025/05/nigeria-uk-historic-moment-as-community-devastated-by-shell-oil-spills-have-final-chance-for-justice/)) reset accountability for a huge legacy liability. **HYPREP**'s Ogoniland clean-up has closed 30 of 65 UNEP sites and planted ~1.54 million mangrove seedlings, but UNEP's technical-assistance project has now closed and monitoring capacity is thin ([UNEP](https://www.unep.org/news-and-stories/statements/closure-uneps-technical-assistance-project-support-hyprep-remediation), [Guardian](https://guardian.ng/news/15-years-after-unep-report-hyprep-says-ogoni-cleanup-on-course/)). Meanwhile PIA **Host Community Development Trusts** (160+ incorporated, ~₦373bn accrued by Oct 2025, 536 projects — [BudgIT](https://budgit.org/five-years-of-the-host-community-development-trust-progress-perils-and-the-path-forward/)) are spending money with almost no environmental M&E. Nobody provides the independent monitoring layer that ties all of this together.
+
+**Unique value proposition.** *"Every spill corroborated, every clean-up tracked, every restored hectare verified — from public satellites, independently."* The only platform built specifically for the Delta's institutions (NOSDRA, HYPREP, HCDTs, oil-producing states) and its fast-emerging blue-carbon pipeline.
+
+**Primary customers.**
+- **Government / regulators (anchor):** NOSDRA (spill verification, JIV support), HYPREP (site remediation tracking), NUPRC (environmental compliance), Federal Ministry of Environment, NDDC, and the environment ministries of Rivers, Bayelsa, Delta, Akwa Ibom, Ondo, Imo.
+- **Operators:** Renaissance Africa Energy, Seplat, NNPC E&P, Aiteo, Heirs Energies, First E&P, Conoil — for independent baseline/remediation evidence and OSPRI/ESG reporting.
+- **Host-community structures:** PIA Host Community Development Trusts and their advisory bodies; community-based monitoring groups.
+- **Carbon / restoration:** mangrove blue-carbon developers (the Akwa Ibom/Rivers Niger Delta Mangrove Restoration Project is in Verra VCS + CCB verification; a Delta State project with Serendib Capital / Eight Versa / PIND is pitched as the world's second largest — [First Climate](https://www.firstclimate.com/post/independent-verification-confirms-impact-of-niger-delta-mangrove-restoration-in-nigeria?lang=en), [Eight Versa](https://eightversa.com/sustainability-insights/press-release-mangrove-restoration-project-in-nigerias-delta-state-set-to-be-second-largest-in-the-world/)).
+- **Accountability / finance:** litigation firms and NGOs (Amnesty, SDN, EDEN, ERA/FoEN), academic researchers, banks and insurers with Delta asset exposure, journalists.
+
+**User journey (NOSDRA desk officer).** A spill is reported for a pipeline near Bodo → officer opens DeltaGuard, which has already flagged a dark linear slick on the Sentinel-1 pass two days prior and a vegetation-stress signal on Sentinel-2 → the tool overlays the affected mangrove polygon, estimated area, nearby settlements (GRID3) and prior incidents at the same coordinates → officer generates a "pre-JIV evidence brief" with imagery, area estimate and a confidence rating → after the Joint Investigation Visit, the officer logs the agreed cause/volume; DeltaGuard then monitors the site monthly and auto-flags if no vegetation recovery is detected within the regulatory clean-up window, producing a remediation-status report for the quarterly compliance review.
+
+**Platform architecture.**
+- **Incident ingestion:** scheduled scrape/import of the NOSDRA Oil Spill Monitor (D-47) into a normalised incident table (operator, date, location, cause, reported volume, JIV status).
+- **Satellite corroboration service:** Sentinel-1 SAR (D-02) dark-spot / slick detection (CleanSeaNet-style thresholding + a deep-learning classifier to cut look-alikes); Sentinel-2 (D-01) NDVI / NDWI / burn and oil-stress indices; VIIRS Nightfire (D-07) and Sentinel-5P (D-03) to co-locate flaring pressure; Digital Earth Africa coastline & Water Observations from Space (D-16).
+- **Ecosystem-change engine:** Global Mangrove Watch extent & loss (D-25), ESA CCI Biomass (D-26) and GFW tree-cover loss (D-24) to quantify mangrove/forest change around each incident and each restoration site, with control areas.
+- **MangroveLedger MRV module:** restoration-site registry (polygons, species, planting dates), survival monitoring from high-cadence optical, biomass accrual curves, methodology-aligned carbon quantification, uncertainty, append-only records — same governance pattern as this repo's `emissions-engine-spec.md`.
+- **Field-data intake:** mobile app for JIV photos, GPS, soil/TPH sample results, planting and survival counts, community observations (offline-capable).
+- **Delivery:** web app (incident map, site dossiers, remediation tracker, restoration dashboard), API, PDF evidence and MRV reports, and a throttled public transparency portal with a right-of-reply workflow.
+
+**Required datasets / APIs.** D-01, D-02, D-03, D-07, D-16, D-24, D-25, D-26, D-47; population/exposure D-20, D-49. All free / Tier A–B. Compute: Copernicus Data Space + Google Earth Engine or Digital Earth Africa Sandbox.
+
+**Example data architecture.**
+`incidents` (incident_id, operator, report_date, geom, cause_reported, vol_reported_bbl, jiv_status, source_url) → `sat_corroboration` (incident_id, s1_slick_geom, s1_date, s2_stress_index, s2_date, area_ha_est, confidence) → `sites` (site_id, type=[spill|remediation|restoration], geom, first_obs) → `ecosystem_change` (site_id, month, mangrove_ha, ndvi_mean, biomass_tCO2e, vs_control_delta) → `remediation_status` (site_id, milestone, due_date, evidence_ids, verified_by, status) → `mangrove_ledger` (append-only: site_id, period, planted_ha, survival_pct, agb_tCO2e, soil_tCO2e, method_version, uncertainty, verifier_status) → `field_records` (record_id, site_id, type, gps, media_ids, lab_results, submitted_by). Every estimate carries `method_version` and `input_data_hash`.
+
+**MVP features (months 0–6).** Ingested Oil Spill Monitor incident map (2006–present) with per-incident Sentinel-1/Sentinel-2 corroboration and area estimate; mangrove-loss overlay around each incident; site dossier PDF; a maintained **Niger Delta spill-corroboration dataset** as a standalone product; basic remediation tracker for a pilot set of HYPREP/HCDT sites.
+
+**Advanced features (months 6–18).** MangroveLedger blue-carbon MRV module (baseline extent, survival, biomass, leakage); deep-learning oil-slick classifier; automated remediation-window compliance flags; HCDT environmental-M&E console; InSAR subsidence layer for the coast; sensitivity/priority mapping for spill response; public transparency portal; Article-6 / registry export.
+
+**AI/ML opportunities.** SAR oil-slick vs look-alike classification (published DL detectors exist); optical oil-stress and mangrove die-back segmentation; change-point detection on NDVI/biomass time series to separate spill impact from tidal/seasonal variation; mangrove-species and canopy-height estimation for allometry; NLP extraction from JIV reports, court filings and HCDT project documents; automated "restoration success" scoring from high-cadence imagery.
+
+**GIS / satellite-data opportunities.** The product is fundamentally EO + GIS. Distinct assets: a decade-plus **historical Sentinel-1 slick archive for the Gulf of Guinea / Delta** as a standalone dataset; a continuously updated **mangrove-extent-and-health layer** at higher cadence than Global Mangrove Watch; hydrological connectivity mapping (creeks, tidal channels) to model spill spread; a restoration-site digital twin combining drone and satellite.
+
+**Reporting dashboard.** **Regulator view:** incident queue with corroboration confidence, remediation-compliance tracker, state/operator league tables, quarterly compliance export. **Operator view:** own incidents, independent baseline & closure evidence, ESG/OSPRI reporting. **HCDT / community view:** local environmental status, restoration progress, project M&E. **Developer view:** restoration-site MRV, credit-volume projection, verification-ready evidence packs.
+
+**Environmental-impact calculation methodology.**
+- *Spill impact:* affected area = SAR/optical-delineated slick and vegetation-stress polygon; ecological damage proxied by change in mangrove/vegetation index versus pre-incident baseline and matched controls, reported with confidence bands (satellite volume estimation stays "indicative" — the number the platform stands behind is *impacted area* and *vegetation change*, not barrels).
+- *Remediation:* binary milestone verification plus measured vegetation recovery trajectory vs the regulatory target.
+- *Restoration / blue carbon (MangroveLedger):* net carbon = Σ(Δ above-ground biomass × 0.47 × 44/12) + soil-organic-carbon change (where methodology and cores allow) + below-ground, minus baseline, minus leakage, minus buffer. KPIs: hectares restored & surviving, tCO₂e sequestered/avoided, mangrove extent stabilised, spill response time improved. Auditable to ISO 14064-3 / Verra VM0033 once the methodology is externally reviewed and cores are added.
+
+**Business model.** Regulator/agency SaaS ($25–90k/yr, often donor-underwritten at first) + setup; operator enterprise ($20–60k/yr); HCDT environmental-M&E subscription ($5–15k/yr per trust, of which there are 160+); MangroveLedger MRV: setup + per-verification fee or **3–8% of blue-carbon issuance value**; standalone data licensing (slick archive, mangrove-health layer) to researchers, insurers and consultancies; commissioned evidence/impact reports ($5–40k). Target ~$0.5–1m ARR in 24 months across ~4 agencies, ~4 operators, ~15 HCDTs and 2–3 restoration projects.
+
+**Pricing possibilities.** Free public tier: incident map + corroboration confidence + annual Delta environmental report (credibility, press, community trust). Paid: site-level history, remediation tracking, MRV, API, data licences.
+
+**Go-to-market.** (1) Publish a free annual "Niger Delta Oil-Spill Corroboration & Mangrove Report" co-branded with a university or SDN. (2) Extend the NOSDRA–SDN methane/monitoring prototype rather than compete. (3) Land one restoration developer needing Verra-grade MRV as a lighthouse. (4) One HYPREP or state-ministry pilot via donor funding. (5) Package the HCDT environmental-M&E console for the trusts collectively through their umbrella bodies.
+
+**Partnership opportunities.** Stakeholder Democracy Network (Oil Spill Monitor co-builder); PIND Foundation and Serendib Capital / Eight Versa (restoration pipeline); a Niger Delta university (UNIPORT, UNIUYO, Niger Delta University) for calibration and field teams; Verra / a validation-verification body; SkyTruth (SAR methods); Amnesty / SDN for the accountability use case; ESA / Digital Earth Africa for EO support.
+
+**Government agencies to approach.** NOSDRA, HYPREP, NUPRC, Federal Ministry of Environment, NDDC, Ministry of Niger Delta Development, and the environment ministries of Rivers, Bayelsa, Delta, Akwa Ibom, Imo, Ondo.
+
+**Private companies to approach.** Renaissance Africa Energy, Seplat Energy, NNPC E&P, Aiteo, Heirs Energies, First E&P, Conoil; remediation contractors; blue-carbon developers; Africa Re and insurers with Delta exposure; law firms handling Delta litigation.
+
+**Development organisations to approach.** UNEP (post-TA Ogoni support), World Bank (Nigeria environment / NDDC-linked programmes), AfDB, GEF (international waters / biodiversity / land degradation windows), the Netherlands government (funded the NOSDRA–SDN methane prototype), FCDO, GIZ, Blue Action Fund, the Global Fund for Coral Reefs / blue-carbon funders, Bezos Earth Fund (AI-for-nature-MRV), Google.org.
+
+**Green funding opportunities.** GEF (biodiversity + international waters + land degradation — mangroves qualify on all three); GCF adaptation/mitigation (coastal resilience + blue carbon, via DBN/NCCC); Adaptation Fund (via BOI); Blue Action Fund and blue-carbon philanthropic funders; Netherlands / FCDO / GIZ bilateral; carbon pre-finance from blue-carbon buyers once MangroveLedger is methodology-aligned. Section 5.2 checklist fits cleanly: defined intervention (independent spill + remediation + restoration MRV for the Delta), KPIs (hectares restored & verified, tCO₂e, mangrove extent stabilised, response time, sites closed), baseline (public satellite record + Oil Spill Monitor + Global Mangrove Watch), standards (IPCC + Verra VM0033/VM0007 + ISO 14064), safeguards (community consent, benefit-sharing, grievance mechanism), sustainability tail (agency + operator + HCDT subscriptions).
+
+**Carbon-finance potential.** Moderate-to-strong, as MRV provider or JV MRV partner, in **mangrove blue carbon** — Verra **VM0033** (tidal wetland restoration) and **VM0007 REDD+** (avoided mangrove conversion), with prices historically ~$15–35/tCO₂e and rising. The Delta pipeline is real and early (one project approaching first issuance; another pitched at ~5 Mt CO₂e/yr potential). Open data supports extent, survival and above-ground biomass; **soil/root carbon — the majority of mangrove carbon — requires sediment cores**, so the platform's role is the satellite + field-data MRV backbone, not the crediting entity. 18–30 months to first supported issuance.
+
+**Regulatory requirements.** No licence to operate. But this is the most politically sensitive concept in the study: publishing spill-corroboration and clean-up-failure findings about named operators and named agencies demands a rigorous, externally reviewed methodology, explicit uncertainty, a formal right-of-reply, and ideally institutional cover (a university or MoU partner). Field sampling for MRV must follow the chosen methodology's protocols; any credit verification must be done by an accredited third party. Community data requires free, prior and informed consent and benefit-sharing under PIA host-community provisions.
+
+**Major risks.**
+- *Political and security exposure:* the Delta is a difficult operating environment; findings can attract pushback from operators, agencies or armed actors. Mitigate with method transparency, institutional partners, local teams, and a measured public posture.
+- *Attribution disputes:* separating spill damage from sabotage, artisanal refining, logging and tidal change is genuinely hard. Mitigate with control areas, conservative language, and field corroboration.
+- *SAR false positives:* wind slicks, biogenic films and rain cells mimic oil. Mitigate with a trained classifier and multi-sensor confirmation.
+- *Buyer concentration and slow budgets:* few agencies, thin public funding. Mitigate with the 160+ HCDTs, operators, restoration developers and data licensing.
+- *Blue-carbon methodology and market volatility:* VM0033 requirements are demanding and voluntary-market prices swing. Don't bank the carbon tail early.
+- *Data continuity:* depends on the Oil Spill Monitor staying online and on Sentinel-1 (funded to 2032+, C follow-on planned).
+
+**12-month implementation roadmap.**
+- **M0–1:** entity; Copernicus/GEE access; MoU with SDN or a Delta university; scope pilot geography (e.g. Ogoniland + Bodo/Bille + one restoration site).
+- **M1–3:** ingest the full Oil Spill Monitor archive; build Sentinel-1 slick detection + Sentinel-2 stress indices; incident-corroboration table and map.
+- **M3–5:** mangrove-change engine (Global Mangrove Watch + Sentinel-2 + biomass); site dossier PDF; publish the first free corroboration dataset/report.
+- **M5–7:** remediation tracker for a HYPREP/HCDT pilot set; field app v1; onboard first agency and first operator pilot.
+- **M7–9:** MangroveLedger MRV module v1 with a restoration-developer partner; deep-learning slick classifier.
+- **M9–12:** HCDT environmental-M&E console; public transparency portal with right-of-reply; external methodology review; submit a GEF/GCF or Blue Action Fund concept with pilot evidence; plan expansion to the wider Gulf of Guinea.
+
+**Estimated MVP development effort.** ~5–7 months, 4 people (2 geospatial/EO, 1 backend, 1 full-stack + a part-time Delta field coordinator), ~$140–210k including compute and a methodology review. A "spill-corroboration map + standalone dataset" cut can reach a first agency/researcher pilot in ~3–4 months; MangroveLedger adds ~2–3 months plus field partnerships.
 
 ---
 
