@@ -113,6 +113,7 @@ a{{color:var(--brand)}}
 .progress{{position:sticky;top:53px;z-index:39;height:3px;background:transparent}}
 .progress i{{display:block;height:100%;width:0;background:var(--brand);transition:width .1s linear}}
 .layout{{display:grid;grid-template-columns:var(--sbw) 1fr;gap:0;max-width:1320px;margin:0 auto}}
+.scrim{{position:fixed;inset:0;background:transparent;opacity:0;pointer-events:none;z-index:34}}
 aside{{border-right:1px solid var(--line);padding:18px 10px 60px;position:sticky;top:56px;align-self:start;
   height:calc(100vh - 56px);overflow-y:auto}}
 aside .filter{{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--panel);
