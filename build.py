@@ -37,7 +37,7 @@ def h1_meta(chunk):
 
 
 title_m = re.search(r'<h1 id="([^"]+)">(.*?)</h1>', front, re.S)
-doc_title = strip_tags(title_m.group(2)) if title_m else "Green-Tech Opportunities — Nigeria"
+doc_title = html.unescape(strip_tags(title_m.group(2))) if title_m else "Green-Tech Opportunities — Nigeria"
 
 # nav: front-matter h2s (skip the subtitle h2) + section h1s
 nav = []
